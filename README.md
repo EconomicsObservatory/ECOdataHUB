@@ -17,7 +17,7 @@ All of our chart data are published under their respective article subfolders, b
 
 ## 🌌 Visualisations
 
-Head over to our **[ECOvisualisations](https://github.com/EconomicsObservatory/ecovisualisations)** repository for all of our charts sorted by article. We try to follow industry best-practices in data visualisation and try to establish our very own visualisation guidelines for all chart types. You can read about these, as well as the tools we use in [guidelines](https://github.com/EconomicsObservatory/ecovisualisations/guidelines).   
+Head over to our **[ECOvisualisations](https://github.com/EconomicsObservatory/ecovisualisations)** repository for all of our charts sorted by article. We try to follow industry best-practices in data visualisation and try to establish our very own visualisation guidelines for all chart types. You can read about these, as well as the tools we use in [guidelines](https://github.com/EconomicsObservatory/ECOvisualisations/tree/main/guidelines).   
 
 ## 📧 Contact
 
