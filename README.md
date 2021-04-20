@@ -25,7 +25,7 @@ Under **[panels](/panels)** each visualisation has their own (typically [Vega](h
 - In `*_local.json` all data is stored as a static `Javascript Object` inside the `json` files (this is the safest but also the slowest)
 
 ### Embedding
-Furthermore, we maintain a `viewer.html` in every **panel** folder that can take a data source parameters as its URL hash. E.g. visiting [`/lms/viewer.html#lms_eco`](https://economicsobservatory.github.io/ECOdataHUB/panels/lms/viewer.html#lms_eco) will open the viewer for the `lms` dataset with the `eco` data load source specification. **This is the recommended way** for embedding our visualisations on other sites.
+Furthermore, we maintain a `viewer.html` in every **panel** folder that can take a data source parameters as its URL hash. E.g. visiting [`/lms/viewer.html#lms_eco`](https://economicsobservatory.github.io/ECOdataHUB/panels/lms/viewer.html#lms_eco) will open the viewer for the `lms` dataset with the `eco` data source specification. **This is the recommended way** for embedding our visualisations on other sites.
 
 
 Pubished | Updated | Article | Repository | Code
