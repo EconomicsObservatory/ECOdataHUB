@@ -15,7 +15,18 @@ Welcome to the ECOdataHUB!
 
 All of our chart data are published under their respective article subfolders, but on top of that we also operate the **[ECOdataHUB](https://github.com/EconomicsObservatory/ecodatahub)**, where you will find a trove of data used in our articles and analyses, as well as interactive visualisation exploration interfaces. Whenever possible, we try to follow a [TIDY](http://vita.had.co.nz/papers/tidy-data.pdf) format. 
 
-You will find hte datasets we curate and mirror in the [**data**](/data) folder, sorted as `provider/dataset/series`. Whenever possible, and unless absolute necessary for the visualisation, we strive to maintain a "mirror only" attitude - i.e. most of the files are direct backups of the API response calls. Whenever new data becomes availabe, these datasets update automatically. We normalize the data and compile the visualisations using the [**`parser.ipynb`**](parser.ipynb) [Jupyter](https://jupyter.org/). Under **[panels](/panels)** each visualisation has their own (typically [Vega](http://vega.github.io/)) `json` specification. 
+### Structure
+
+You will find the datasets we curate and mirror in the [**data**](/data) folder, sorted as `provider/dataset/series`. Whenever possible, and unless absolute necessary for the visualisation, we strive to maintain a "mirror only" attitude - i.e. most of the files are direct backups of the original API call responses. Whenever new data becomes availabe, these datasets update automatically. 
+### Panels
+Under **[panels](/panels)** each visualisation has their own (typically [Vega](http://vega.github.io/)) `json` specification. We normalize the data and compile the visualisations using the [**`parser.ipynb`**](/panels/lms/parser.ipynb) [Jupyter](https://jupyter.org/) notebook. Every **panel** folder contains 3 visualisation specification files:
+- In `*_eco.json` the data for the visualisation is loaded from this repository (recommended use)
+- In `*_live.json` the data for the visualisation is loaded directly from its original location (e.g. [ONS API](https://developer.ons.gov.uk/)) 
+- In `*_local.json` all data is stored as a static `Javascript Object` inside the `json` files (this is the safest but also the slowest)
+
+### Embedding
+Furthermore, we maintain a `viewer.html` in every **panel** folder that can take a data source parameters as its URL hash. E.g. visiting [`/lms/viewer.html#lms_eco`](https://economicsobservatory.github.io/ECOdataHUB/panels/lms/viewer.html#lms_eco) will open the viewer for the `lms` dataset with the `eco` data load source specification. **This is the recommended way** for embedding our visualisations on other sites.
+
 
 Pubished | Updated | Article | Repository | Code
 --- | --- | --- | --- | ---
