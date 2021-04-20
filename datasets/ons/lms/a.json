@@ -1,0 +1,54 @@
+{
+    "alerts": [],
+    "months": [{
+            "date": "1971 FEB",
+            "label": "1971 JAN-MAR",
+            "month": "February",
+            "quarter": "",
+            "sourceDataset": "LMS",
+            "updateDate": "2015-10-13T23:00:00.000Z",
+            "value": "3.8",
+            "year": "1971"
+        },
+        {
+            "date": "1971 MAR",
+            "label": "1971 FEB-APR",
+            "month": "March",
+            "quarter": "",
+            "sourceDataset": "LMS",
+            "updateDate": "2015-10-13T23:00:00.000Z",
+            "value": "3.9",
+            "year": "1971"
+        },
+        {
+            "date": "1971 APR",
+            "label": "1971 MAR-MAY",
+            "month": "April",
+            "quarter": "",
+            "sourceDataset": "LMS",
+            "updateDate": "2015-10-13T23:00:00.000Z",
+            "value": "4.0",
+            "year": "1971"
+        },
+        {
+            "date": "1971 MAY",
+            "label": "1971 APR-JUN",
+            "month": "May",
+            "quarter": "",
+            "sourceDataset": "LMS",
+            "updateDate": "2015-10-13T23:00:00.000Z",
+            "value": "4.1",
+            "year": "1971"
+        },
+        {
+            "date": "1971 JUN",
+            "label": "1971 MAY-JUL",
+            "month": "June",
+            "quarter": "",
+            "sourceDataset": "LMS",
+            "updateDate": "2015-10-13T23:00:00.000Z",
+            "value": "4.1",
+            "year": "1971"
+        }
+    ]
+}
