@@ -15,9 +15,18 @@ Welcome to the ECOdataHUB!
 
 All of our chart data are published under their respective article subfolders, but on top of that we also operate the **[ECOdataHUB](https://github.com/EconomicsObservatory/ecodatahub)**, where you will find a trove of data used in our articles and analyses, as well as interactive visualisation exploration interfaces. Whenever possible, we try to follow a [TIDY](http://vita.had.co.nz/papers/tidy-data.pdf) format. 
 
+You will find hte datasets we curate and mirror in the **data** folder, sorted as `provider/dataset/series`. Whenever possible, and unless absolute necessary for the visualisation, we strive to maintain a "mirror only" attitude - i.e. most of the files are direct backups of the API response calls. Whenever new data becomes availabe, these datasets update automatically. We normalize the data and compile the visualisations using the [**`parser.ipynb`**](parser.ipynb) [Jupyter](https://jupyter.org/). Under **[panels](/panels)** each visualisation has their own (typically [Vega](http://vega.github.io/)) `json` specification. 
+
+Pubished | Updated | Article | Repository | Code
+--- | --- | --- | --- | ---
+2021.04.20 | 2021.04.20 | [Data Hub: Labour market](https://www.economicsobservatory.com/data-hub-labour-market) | [folder](/datasets/ons/lms) | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/economicsobservatory/ecodatahub/blob/main/parser.ipynb)
+
 ## 🌌 Visualisations
 
 Head over to our **[ECOvisualisations](https://github.com/EconomicsObservatory/ecovisualisations)** repository for all of our charts sorted by article. We try to follow industry best-practices in data visualisation and try to establish our very own visualisation guidelines for all chart types. You can read about these, as well as the tools we use in [guidelines](https://github.com/EconomicsObservatory/ECOvisualisations/tree/main/guidelines).   
+
+## 💻 Build
+We are constantly expanding the capabiltiies of the ECOdataHUB. If you discovered any bugs or have any specific suggestions or feature requests please use the [Issues](https://github.com/EconomicsObservatory/ECOdataHUB/issues) page.
 
 ## 📧 Contact
 
