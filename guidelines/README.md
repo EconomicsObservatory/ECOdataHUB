@@ -2,7 +2,7 @@
 
 # Economics Observatory Data Guidelines
 
-At the **Observatory**, we strive to follow current best practices to stay up to date with recent developments of the rapidly-changing world of data visualisation. We maintain a set of guidelines that we use internally for designing our visualisations - but they are also free to share and please feel free to raise an [Issue](https://github.com/EconomicsObservatory/ECOvdataHUB/issues) if you have any suggestions, everyone and everything is welcome! 💙
+At the **Observatory**, we strive to follow current best practices to stay up to date with recent developments of the rapidly-changing world of data visualisation. We maintain a set of guidelines that we use internally for designing and maintaining our datasets - please feel free to raise an [Issue](https://github.com/EconomicsObservatory/ECOdataHUB/issues) if you have any suggestions, everyone and everything is welcome! 💙
 
 <hr>
 
