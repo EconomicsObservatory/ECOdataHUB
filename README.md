@@ -9,7 +9,7 @@
 | [**Data**](https://github.com/EconomicsObservatory/ecodatahub)
 |
 
-Welcome to the ECOdataHUB! Here we host the our auto-updating datasets that fuel the interactive charts on the [**ECOdata dashboard**](https://economicsobservatory.github.io/ECOdataHUB).
+Welcome to the ECOdataHUB! Here we host the our auto-updating datasets that fuel the interactive charts on the [**ECOdata dashboard**](https://economicsobservatory.github.io/ECOdataHUB/dashboard).
 
 ## 📊 Data
 
