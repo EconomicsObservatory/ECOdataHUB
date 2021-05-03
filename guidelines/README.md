@@ -78,4 +78,4 @@ Then, the following hold true:
 
 ## Make sure you check out the 📐[Visualisation Guidelines ↗](https://github.com/EconomicsObservatory/ECOvisualisations/tree/main/guidelines) too!
 
-Updated on 📆 2021-04-27 by [Dénes Csala](https://csaladen.es)
+Updated on 📆 2021-05-03 by [Dénes Csala](https://csaladen.es)
