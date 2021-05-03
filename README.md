@@ -3,6 +3,7 @@
 # Economics Observatory  Data Hub
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/EconomicsObservatory/ecovisualisations/blob/main/LICENSE)
+![GitHub last commit](https://img.shields.io/github/last-commit/EconomicsObservatory/ECOdataHUB?label=last%20update)
 
 [**Website**](https://www.economicsobservatory.com/)
 | [**Visualisations**](https://github.com/EconomicsObservatory/ecovisualisations)
