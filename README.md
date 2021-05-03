@@ -3,11 +3,11 @@
 # Economics Observatory  Data Hub
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/EconomicsObservatory/ECOvisualisations/blob/main/LICENSE)
-[![GitHub last commit](https://img.shields.io/github/last-commit/EconomicsObservatory/ECOdataHUB?label=last%20update)](https://github.com/EconomicsObservatory/ECOvisualisations)
+[![GitHub last commit](https://img.shields.io/github/last-commit/EconomicsObservatory/ECOdataHUB?label=last%20update)](https://github.com/EconomicsObservatory/ECOdataHUB)
 
 [**Website**](https://www.economicsobservatory.com/)
-| [**Visualisations**](https://github.com/EconomicsObservatory/ecovisualisations)
-| [**Data**](https://github.com/EconomicsObservatory/ecodatahub)
+| [**Visualisations**](https://github.com/EconomicsObservatory/ECOvisualisations)
+| [**Data**](https://github.com/EconomicsObservatory/ECOdataHUB)
 |
 
 Welcome to the **ECOdataHUB**! Here we host the our auto-updating datasets that fuel the interactive charts on the [**ECOdata dashboard**](https://economicsobservatory.github.io/ECOdataHUB/dashboard). Here you will find all the data visualisations and datasets attached to the ECOdataHUB and published on the Observatory website. Each visualisation is published under an open source [MIT licence](LICENSE), and you are free to reuse/reproduce/redistribute, with attribution. Please look at the **original** data sources for their respective data licenses and usage policy.
