@@ -1,1 +1,167 @@
-ECOdata dashboard
+<!-- <rssapp-wall id="5SGEq9QjhvMpbvdT"></rssapp-wall><script src="https://widget.rss.app/v1/wall.js" type="text/javascript" async></script> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width">
+
+  <link rel='stylesheet' href='https://npmcdn.com/flickity@2/dist/flickity.css'>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: sans-serif;
+    }
+
+    .carousel {
+      background: grey;
+    }
+
+    .carousel-cell {
+      width: 70%;
+      height: 95vh;
+      /* flex-box, center image in cell */
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+
+    .carousel-cell iframe {
+      display: block;
+      max-width: 100%;
+      max-height: 100%;
+      /* dim unselected */
+      opacity: 0.7;
+      -webkit-transform: scale(0.85);
+      transform: scale(0.85);
+      -webkit-filter: blur(5px);
+      filter: blur(5px);
+      -webkit-transition: opacity 0.3s, -webkit-transform 0.3s, transform 0.3s, -webkit-filter 0.3s, filter 0.3s;
+      transition: opacity 0.3s, transform 0.3s, filter 0.3s;
+    }
+
+    /* brighten selected image */
+    .carousel-cell.is-selected iframe {
+      opacity: 1;
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      -webkit-filter: none;
+      filter: none;
+    }
+
+    @media screen and (min-width: 768px) {
+      .carousel-cell {
+        /* height: 400px; */
+      }
+    }
+
+    @media screen and (min-width: 960px) {
+      .carousel-cell {
+        width: 60%;
+      }
+    }
+
+    /* buttons, no circle */
+    .flickity-prev-next-button {
+      width: 60px;
+      height: 60px;
+      background: transparent;
+      opacity: 0.6;
+    }
+
+    .flickity-prev-next-button:hover {
+      background: transparent;
+      opacity: 1;
+    }
+
+    /* arrow color */
+    .flickity-prev-next-button .arrow {
+      fill: white;
+    }
+
+    .flickity-prev-next-button.no-svg {
+      color: white;
+    }
+
+    /* closer to edge */
+    .flickity-prev-next-button.previous {
+      left: 0;
+    }
+
+    .flickity-prev-next-button.next {
+      right: 0;
+    }
+
+    /* hide disabled button */
+    .flickity-prev-next-button:disabled {
+      display: none;
+    }
+
+    iframe{
+      width:90%;
+      height:90%;
+      border:none;
+      overflow: hidden;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div id="fb-root"></div>
+  <script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"></script>
+
+  <!-- Flickity HTML init -->
+  <div class="carousel js-flickity">
+    <div class="carousel-cell">
+      <iframe
+        src="https://economicsobservatory.github.io/ECOvisualisations/articles/levelling-up-what-might-it-mean-for-scotland/visualisation/fig2/"></iframe>
+    </div>
+    <div class="carousel-cell">
+      <iframe
+        src="https://economicsobservatory.github.io/ECOvisualisations/articles/levelling-up-what-might-it-mean-for-scotland/visualisation/fig3/a.html"></iframe>
+    </div>
+    <div class="carousel-cell">
+      <iframe
+        src="https://vega.github.io/editor/#/url/vega-lite/N4Igxg9gdgZglgcxALlANzgUwO4tJKAFzigFcJSBnAdTgBNCALFAFgAY2AacaYsiygAlMiRoRQBmDt0qEAThADWmFGQA2agL6budAIaE9eEFD0BbFchD7DAWhgBWMACYYYN87YBOB3RgAOAIk9AHZ-f0wvADYWELAJEMx-EB0QMz05RWNCAE8AB0sQPIgScW5INQg5FBAAYg4oiQBBADEQbngNGtqARhCvFoARACEU7kwoSDoSJFQQSjgAL0tQeEw1Ohq0PTVSFW41TAQJzeR1NRkwHZXrCHSSFABtHs4HAF1U3IKagEdSPSIcEMxDQKlSAA9jHpwXBKMY6Hc9A9kDAdpRMLpESQAMIQSrVKy1KIhKJNfxRdogBByegoVFqdEHPQAI3WTSgCEOKFsLAcTNZalx+O6xNJ5MpEBgMHR4mQfJAVSwRBqhAgeUpxDAiiFVRFJLJFO4mu1FGVyB6XBAxrhKLRGKtQK5Vg1jswTTUiCgNTAE0ImGqRtd7LAjF1VjM9DoXMDhEOOoJdVFBpdscwAA0UJ4QjHDgBNbk9BypNYbGokOhUeQ5SmUKqyx5vI35QpQO4kHZjEDVubQ2HwrFe20M+3U2nIeR7bijujxvViw1Uml0ADyeT0YCB3bYADoXiA1Cz1rPCUnxYGtTb6YyHamainDu7PTVDjAyjeHxynZbiKnhnp0R6UCFMyECEKqZj3pgx6JvqZ7vum3Lyj+eaIcWWCluGmCGGoNZ1k8jZWs2NSthGpg4doOaFJSeikKqCzLNkRFWPAb5yJg9GWBOmCpAAJJQIaYOkNRiIQeSUMgAD0EmgggejbggQKMKQzLbnAEASfxjCCXo0lHHotgen60ksLuITbjuABWtZeroBj-lhNqgDY+mOC4bgeN4vgBEEoThJEMRxAkSRPKAFjYTUADKfrrJS5aVnI3YgAA4pgoFaXI6Q4dw2y7JYEg6KFWEdlYUWYDF3BxbICU1IIOR0AolI5XskgFWkRU4SV0VZSAlVVjUABypBgIcGSNTszXIPlnCFeFnVld1vXVVYwxqRM-oINW2XjXlrVhcVICleVPVQBWVWJQAoocYDyHAG65AABEBhDYFUihwltuUtdNbWzQdXWxSd8WJbiky+nIBiYHQ921geAYgE1O3fXtHV-fNAOnX1Vi1fVEDHDZ8PbV9M37YdC2A2dNS0CdY2fZNu3tZF-0VeTmMgAACqGqpoHihi3e9BO01NxMo6T6NAzUl2YNdNJgPdoKMLdhz8wjRM-ftuJ5AUcOLYlKVpf6mU0xNPT079Gta2LFNY3VDUfRNzim+raoW8zGNLSAg3DZgo125YJtIwzVjm-6lusytEBrXIG1G4jws1MH2ss+7kvS7dm6PVhL2ZMrhN0wHZvOyHrvi0H0A+kQ4N+lDMM+wL9uOyjCeh+72MKHjMeZg38eF4nbuJVTmy+6ryPd5rRfHX3NQc6BEDc2ovNgDngtd6XY+9yXIApzdsvy4r7Ed3ncdWO6pCkXAp-N7rqVMAbHZD+aK8gCfZ8X8XVsgK3EAHw7+f7c-JDnwgm-VmnsRpwxVg-X+KN-5QEAZfGo4dI7R3vj-I+T9dgvyARPDeW8ZbpyelnN6B8hZq2gRggBr9sHvxBuXeQENq54lrhAkhI9j7kNgZQnWNUba4wmN-R+MC4HAPdgPfhUCaiCM4UnRK08uY8yRIvYhAj2FCKoazXBt05aYAVl7JeE0WGBw9rdZQZNJ5WD1jfDKd866x1IQNYxR0uHWxxgff2aD+oONMRvUB3twG51QXYqwHitSOOkQg1aQEo6bRsSgNxgSjEhK8e-DRd0cgZ2eq9PRftH7BJMfA0uoMK70OhowvxtMAmsISXk4RiVP7txQTkzx+SQCiIaeIoJTSalT05rPeRfMxHuM6Wo5OV1t5aJ0UrJR7SQAAC0SBgGaRY9Kht75xMqXMyYzTP4DPiRshZXSglDTAa4x+ezmmIMicgmJyAKmGLOQczeoy8EPQIZkk50z7nDOBmXMGxSa5lPrh8+ZWyeH1OuWsu5wKHmtOuQY36nynHsx6XPBeWTO5As2Q8lJ4y95osgWgwYORKB5AUAsKRZjkrX2WdYiBELfqEuJaS1RiLtmrMfgyklEAyVYMRT4phuc6X7Q5Uy8lG8LnrWibS9lRLOXcuaSk-Bmc3lsumcKrlzKwkFNoZXSGJTYbvIJTKkVPLNUf1BXwlVhrGXqtFe-GFzDpXWrlQ82RvT54KLxYKlGarnVfIlk8zRu9dFTPcalOgOQIy2tZks2+3UpXTP6mGiNGqKWsvBTkpNkaTUUr5QC7JCbM0prFREiVBr4mJogOGrN8qA2pPSYQz1GbK3Jqje7Ghvyq56v5bTL1A1C2ttqea-G8bQ3NurdC8sIby39uzRvV1KKPVlsqRWqtRbkm1pxcG++cL9ps3BuiMda7o1UtjUuwxe77KHoHdwlxlr4kXoPau69hyvbduNo-B9M7zklqiWe36n6r2zvXVLbeiqMnZz-bu-dX6HntqKZ2-5kGUYAafUB1mdSLXpumShltaGRGTu3R+6DgHmnzr6You9lScPjr9VYbFQbJmEemRFOAHoCCLJPVYuNArH4sbY9AEFt6sNoL47dATDzc1IciqxsT+NEXit-ZRwxon2NYtrWBhtUmSoydU7RkAcG6EIdKVpg6OnxN6Yw8OnjzGzNydNfa6zInbOkeReRvFO6RbObUyBmWm7GOwsfgAFX9MyI97sY1cZM8FuQoXn1mqEyO+J0XYt4cSpJpTv1kthcSgpq5iXKlZbiwql5SqIMZf2oV1L3dCmGd1Yh8rKNKuCbbph-LhimsTupkxtBHW9Nkfdf0hrNReuIvo9o3FU7Km4mZDsN8iKIsrOE-E6bs3mtfyG6XGb89mnpaW1NiAW25umty5Kxzy2Dure86nOtryyt7cMSt7bsGfnwbq8Zjb+mLtPYs0Okzj2jsUocz2x+-2XMzwXYN+7BdDs1p84G8bW6AvTKSuDPICs-Qcf1pFj7KO9Bo6BPsH7CWzuVNx-jjHEmjm+JM2T9HhP5M-ryyTwxtOCew+uxp5VUP9qs4p3pgzOqGH6px6juna2wVtd+rz+n9mCPc5RtLsHciBsUflzURXV2xkMf3t1+JABZAEskgLokx5Yxbkv9oG45ACdiMvU08JM1bo3tudtU7ffmtBTubcm4eSdx3hvvd25wepkr4GiEfa98boP1CXu1aF+72Jj9I8u4eZZ-31uo-NKB4Cz3AfM8utcyrxt0zk8+702NiZOukdObUKCde78Fs0uZ79Pjde1smdb+PXlbu82J5s7Xrvx3GeneB-3tvmvnlpNu+HtX2mB-19ZgLv573Z+mfn+L1rzeSasfH3p7PHv4md4X+7frqLJvKZ34PilFeJttLQdiPQdAaPzc4+brfjdH-P9NWmi3H+n-ZYGh7z+0-wAOWmH2AP-yKxDyn1Kxn1-3jhALiyXyM2F1Xwf0gKq2cRays1H3v0QMwJaTl3gKDnwKVzdTP11ym1IIn3h0r2LzQSSh2A9Di0b241wPiUYI0FAPi1tlX04OYIIN22IOSiYO4L9xx1EKgLhxu1gPoI4MkIIOQLe1QOEP4O4LTwkK4Li33z7wYIULIIh1VwdWR30JoJ3gR382EIAEklxuDWCTMbD6B1CHcPtHDpg4shD38ag3CxDwDXDbCpCOdQ9NN-CnCkDY9Bcu1e98V4kfC4sNDV84iCCdCYjKkkiDC3MHCAiCCb9EdhCAAZRSOw1-JvdgypQopgZw4nMowxCohWDwoAj7Oo3wiOS5Efd9aZZowI0DYIrnAooo8ImrSI+rVfLogghI-oyo7QogrwqwMYjIovEzeYswvzKvYwtBNmA8PgFgkotgjojYrYkgeIlw1fTYgwI4wQxo04w4sgAg8Q6484249nHomAsPOQqjG4wY7VZfFQ2Y9mT48Y37D7M47Y5ImYmo-9AEhYigh40E543zbXd49rdYXYGkHYrHN-CEirFE0gNEwE6o-YpLHEvE13V9aI3tKwYLDQXElopBdog-ArYk7g4rV4kI1fKk1E7gpQ+PckoLJk44nGCXP4jkmk6Yrrdk-kgg0-RdSg5E6kkklYxEkzAAVXBg4QIPsI+1VIBCqN4OEO1PVNJOOVlN+gNNpLaJVLVOZOgPrT6L+LNK+I7WUIT1SMMQdPxOwMtJ1LFMHlX3dOhJlL9KtO6IRIsLWJ4w+E0CAA/view"></iframe>
+    </div>
+    <div class="carousel-cell">
+      <iframe
+        src="https://economicsobservatory.github.io/ECOvisualisations/articles/scottish-independence-what-are-the-big-economic-questions/visualisation/fig1/"></iframe>
+    </div>
+    <div class="carousel-cell">
+      <iframe src="https://economicsobservatory.github.io/ECOvisualisations/articles/how-can-education-and-skills-contribute-to-levelling-up/visualisation/fig2/"></iframe>
+    </div>
+    <div class="carousel-cell">
+      <iframe src="https://rapidcharts.io/environment"></iframe>
+    </div>
+    <div class="carousel-cell">
+      <!-- <iframe src="https://www.economicsobservatory.com"></iframe> -->
+    </div>
+    <div class="carousel-cell">
+      <!-- <iframe src="https://www.economicsobservatory.com/how-can-climate-promises-be-met-while-maintaining-fiscal-sustainability"></iframe> -->
+    </div>
+    <div class="carousel-cell">
+      <!-- <iframe src="https://vega.github.io/editor/#/url/vega-lite/N4Igxg9gdgZglgcxALlANzgUwO4tJKAFzigFcJSBnAdTgBNCALFAFgAY2AacaYsiygAlMiRoRQBmDt0qEAThADWmFGQA2agL6budAIaE9eEFD0BbFchD7DAWhgBWMACYYYN87YBOB3RgAOAIk9AHZ-f0wvADYWELAJEMx-EB0QMz05RWNCAE8AB0sQPIgScW5INQg5FBAAYg4oiQBBADEQbngNGtqARhCvFoARACEU7kwoSDoSJFQQSjgAL0tQeEw1Ohq0PTVSFW41TAQJzeR1NRkwHZXrCHSSFABtHs4HAF1U3IKagEdSPSIcEMxDQKlSAA9jHpwXBKMY6Hc9A9kDAdpRMLpESQAMIQSrVKy1KIhKJNfxRdogBByegoVFqdEHPQAI3WTSgCEOKFsLAcTNZalx+O6xNJ5MpEBgMHR4mQfJAVSwRBqhAgeUpxDAiiFVRFJLJFO4mu1FGVyB6XBAxrhKLRGKtQK5Vg1jswTTUiCgNTAE0ImGqRtd7LAjF1VjM9DoXMDhEOOoJdVFBpdscwAA0UJ4QjHDgBNbk9BypNYbGokOhUeQ5SmUKqyx5vI35QpQO4kHZjEDVubQ2HwrFe20M+3U2nIeR7bijujxvViw1Uml0ADyeT0YCB3bYADoXiA1Cz1rPCUnxYGtTb6YyHamainDu7PTVDjAyjeHxynZbiKnhnp0R6UCFMyECEKqZj3pgx6JvqZ7vum3Lyj+eaIcWWCluGmCGGoNZ1k8jZWs2NSthGpg4do3CMCICBiN6vBIkBAbwXe3DYPQTB0UQDH+pSAAklAhpg6Q1GIhB5JQyAAPSSaCCB6NuCBAowpDMtucAQJJAlUekMlHHotgen6MksLuITbjuABWtZeroBj-lhNqgDY+mOC4bgeN4vgBEEoThJEMRxAkSRPKAFjYTUADKfrrJS5aVnI3YgAA4pgoFUXI6Q4dw2y7JYEg6KFWEdlYUWYDF3BxbICU1IIOR0AolI5XskgFWkRU4SV0VZSAlVVjUABypBgIcGSNTszXIPlnCFeFnVld1vXVVYwzqRM-oINW2XjXlrVhcVICleVPVQBWVWJQAoocYDyHAG65AABEBhDYFUihwltuUtdNbWzQdXWxSd8WJbiky+nIBiYHQ921geTFNTt317R1f3zQDp19VYtX1RAxw2SA8NfTN+2HQtgNnTUtAnWNn2Tbt7WRf9FVkxjIAAAqhqqaB4oYt3vfj22Ez9xOM8d6NLSAl2YNdNJgPdoKMLdhx8wTtOI-TVi4nkBRMYtiUpWl-qZdTE09HTv2a9raNAzVdUNR9E3OGb+0WzxTNi4lg3DZgo325Yptq+baqW271vLatjEbcbCNE8jLs68z4uS9Lt2bo9WEvZkysC6rMc1HHVvkxr0A+kQ4N+lDMM+-zNOOwHztB67ouhyAWMKLjUeZk7scN-H7sU+WHc50L3da43us1OzoEQFzag82AWc01NudF6PvfN0nN2y-LiuYAvE1L8PNTuqQpFwCfBcs-rTCGx2vsoP7y8gMfp-nyHhct7bECD7Xj-PyQZ8QTfizT2I04bZwfofKwf8oAAIvuLFaEA1pyEjnfZAP9IFP12C-QBTd34bxlqnJ6Gc3qDwPkjI+WD-6v1wSzEGJd5AQwrniKuKsyHq0wSfKhODx6Y0-u3VB6DyFQMoTA6hPCQCU02AIruFDOGiO4QnRKk9ObcyRPPUhMjhFyNgUAxOV1N5y0wArL2e9o4YP6rdZQpM+5WCvulI2qC2G-QsVqI64jW5f1QRAoRIAXFWLgR7IaoDv6aN8ZYtxiiagIKQSg6uJtQl+IiTYiW+iCEPSIa9Ux98EnhOsc3OhYNGHQ2YWAmuOTXF5Pfh4-hcTLCCPYYkypLNJEhLrsjRpASJ4c2nqo3mrTH4dN0RdVJt1DHGKVhotpNQABaJAwCdNsala+GVb61OyVMqwszJgLI-tjfpGCtnzKGQNIJ3tSnxI2SAQ5OzokR02mstBoTrnHKsPglO6T06ZMHt49hzyaHiwKaXIpldzl1KeXMnZ1SJjfPBdsl5EiB6ONhUc-5Sjukzznlkx5ly-niLeVvIxO8sU-N+oMHIlA8gKAWGIyJiyDYrO6irEl+0yUUqpTo1FNs9leNCayylEBqUKOSSAs5MLLl8vZTS5Jtz1r3KZby8l-LBU7PxYQz5mcxWPwlQKjl4jAUMPLsU2GmqMHauVfCqFeN5XisVZKoVzcWlIptWynVUrm7KJ6bPNRxKFUuvNZy15IyCXjN3pMgZqU6A5AjG69+dib6MvAQkiNUbdW0t2XbB5zL2nJujfa9+IqWGJsuf1HNqbpXh1lSanxJaICRtzSqoNarnpfJ5cW0tMbaHF0KYakFVaGntrzSzS1fbnEDp2Y6h5Tj9o1rrWW916LenqNbeG2tKaO16KlgY7eJiw0YNZuDdEq763wrjQykd+1932SPXOqpn9z3I0vYe2d67Ale0LTTLNE8D1jvhTK5Bcqi2P0fT+gNKTN1pJyGnZtGrl17u-del9ecu1Ap7SU+9X6r3PsHeLYdsGfHAYQ9hxKE7WGhII1hnZHqMXevQ1Ycja6iM1HxWMolu6fERTgB6AgOzT0OMzaEjjXHoCQrvXh9hgnbrCfhQW0F6zH4Se47+it-7aMHU45JvGeLG0fOgyQsTv0FNSdA-qsukMjXvoufJ9TinQO4f45cwzmm00kcAxgxzlGF1er6U6qzQmnPJOY9uiZPmMEABV-TMhvZfJZ9jVnWsfuFuQkXEO8O5fZhLEWovixk6pxLyXGNh0QXc3LmWUtgeTndSDGSYPpbC6VgrIATPArQ-p-aeWsuJTs-FurSWOv9ypiFnx7WytUcXT6y5w2GuBcJTuwb7DcTMh2G+cRvG4uuZ8QtpbIm0vdY2xARbs8dk5da93A7y201-tibt+b+2tvwtVTp4h43H6bcO-CprqHjUnaQ2d7bbdoXfaLr9+FLmP2hNe+d5Jo2vNLtq3t4HoHpshqxVO5GSVwZ5AVn6HjMX42qfR3oTHQJ9i2dE3D9hBOifY+k6cizftQmU6xyT8Rl2ANg8uYz4nDbwPvKq+qvT5Pfqc+p8Z5DBqzO9sB8lDHTO-s4wB4L-awvmfOcRYrtHMuufwuh5i-HmuRdaZ58G1jc3foAFkARySAuiHH9K+PXfN5bgEu8VfJI8api3HJnc25p2+2T5pQme6ty7m5ymrvrfYUH73rv17ab57p57GCo-W5j+-D7EuWvq5qMnkPFq+EK4d-tHPPvQOg4doHp3KePNT2o95rPVhi+p5Zkjk3k6BOcdBGvWNuOz1S8E53uXqn+9jzTcd+vam1AD6U0VytfeO8j4C3HqDT2h-z67520GKGM9ffH8P9fOH89WojwZtf461eF+Rnv6vKiYco-b5Phfsejcsdmw8+p5s9B0GPaB1bCb2cvc-2-3cTJwvzzkAL6ysDH1AI1nALK1Z1U2xFgKmyX2qwF2gMayQJ2XTyYR33QMQK-wgPTXlyP3-wwXwKANVwG3H3IMIJ1xo1N2dkwPuyDRf2C3HySh2A9DK1-3x04MIPdylw4I0EIKgOPyVz4LgLDzZ0swwSEK4OQKNybRX0EIkIa2wPM390-VsVULlxqXQLkMILL3pw5x0O10811wYLR1MMRxYKC1DSlwAEklxCCeDHDnCysBDx8nD6ARDadNDQlvDphJCZ8VM3CfCysHt49lCvD3C1CxdTMcC6c5MMFAj+DD9VNUiysjDkifFMiGs6C690C8jucKtWD7Dx8AAZJSFwnve3MQ5GKopgNInbeomoRohWMrUQ0gnxdowg+AqXXoiIlA-nRPHo6osrdQyXSo8YhrLrVoqwQYhrbIgPS5RY6-T1Cw6YpooY5-Owu-S5VmA8Pgbg2otbbo9hQ4gwEgDwkA+YtmI464hrLomQ-DB4sgBrfo8fS444hQirJQltL4t4iY+I5rXAu474x43QgvcEoEpY8-GEq4949Y2vWHdAiEpE5g3YmbNg9A8LDQUgGkE4u3M4l49hPE3YQk2Y248436ckgk3wv3ErfEyk0PEI8PGktrdYCkwgyI5fAE3Erk+k4EzfcXRI-wibQUlkvPbGPQu4ukqU0veEjk5GeU2g8w+gtvCU5knk2w7E8o9AgAVXBnkVt2WTqOVJqCNIBGaIzUNONIZOCUsMtPtOCJiWkOMMfitJNMxL+Me35LuK9MIMmMzztOtJuJlOhItKsEDKyKVNJN+hjPyPVMKIDJdN+K3T1J9Q+E0CAA/view"></iframe> -->
+    </div>
+  </div>
+
+  <script src='https://npmcdn.com/flickity@2/dist/flickity.pkgd.js'></script>
+
+</body>
+
+</html>
