@@ -1,0 +1,39 @@
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
+
+        body,
+        text {
+            font-family: "Nunito", sans-serif !important;
+            overflow: hidden;
+        }
+
+        .vega-bindings {
+            font-size: 12px !important;
+            margin-left: 22px;
+            margin-top: 5px;
+        }
+
+        .vega-bindings input{
+            transform: translateY(3px);
+        }
+
+        details {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="view" style="overflow: hidden !important;"></div>
+    <script>
+        vegaEmbed(
+            '#view',
+            document.location.hash.slice(1) + '.json',
+            { renderer: "canvas" }
+        );
+    </script>
+</body>

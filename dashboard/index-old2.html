@@ -106,36 +106,6 @@
       text-align: center;
       margin-bottom: 140px;
     }
-
-    iframe.vega400px {
-      /* background-color: #F4134D; */
-      height: 400px;
-      width: 510px;
-      transform: scale(4.3) translate(48%, 38%);
-    }
-
-    .blink {
-      animation: blinker 1s infinite;
-      position: fixed;
-      top: 200px;
-      left: 47%;
-      font-size: 40px;
-      z-index: 999;
-    }
-
-    @keyframes blinker {
-      from {
-        opacity: 1.0;
-      }
-
-      50% {
-        opacity: 0.5;
-      }
-
-      to {
-        opacity: 1.0;
-      }
-    }
   </style>
 </head>
 
@@ -145,56 +115,29 @@
   <div class="carousel carousel-main">
     <div class="carousel-cell">
       <div>
-        <h1>UK consumer price inflation (as measured by the CPI)</h1>
-        <iframe class="vega400px" src="figs/vega-embed.html#fig1_cpi_local"></iframe>
+        <h1> </h1>
+        <iframe
+          src="https://economicsobservatory.com"></iframe>
       </div>
     </div>
     <div class="carousel-cell">
       <div>
-        <h1>The UK's consumer price index, 1988-2022</h1>
-        <div class="blink" style="left:70%;top:19%">live data from ONS 🔴</div>
-        <iframe class="vega400px" src="figs/vega-embed.html#cpi"></iframe>
+        <h1>Hello bello</h1>
+        <iframe
+          src="https://economicsobservatory.github.io/ECOvisualisations/articles/levelling-up-what-might-it-mean-for-scotland/visualisation/fig2/"></iframe>
       </div>
     </div>
     <div class="carousel-cell">
       <div>
-        <h1>Global greenhouse gas emissions and warming projections</h1>
-        <iframe class="vega400px" src="figs/vega-embed.html#cc"></iframe>
-      </div>
-    </div>
-    <div class="carousel-cell">
-      <div>
-        <h1>Global energy supply investment by sector</h1>
-        <iframe class="vega400px" src="figs/vega-embed.html#energy" style="margin-left:-150px"></iframe>
-      </div>
-    </div>
-    <div class="carousel-cell">
-      <div>
-        <h1>Emissions intensity of GDP</h1>
-        <iframe class="vega400px" src="figs/vega-embed.html#ei"></iframe>
-      </div>
-    </div>
-    <div class="carousel-cell">
-      <div>
-        <h1>Primary energy consumption by fuel</h1>
-        <iframe class="vega400px" src="figs/vega-embed.html#fig2_energy_by_source"></iframe>
-      </div>
-    </div>
-    <div class="carousel-cell">
-      <div>
-        <h1>Global energy mix by fuel, 2021 onwards</h1>
-        <iframe class="vega400px" src="figs/vega-embed.html#fig4_energy_shares"></iframe>
+        <h1>Hello bello5</h1>
+        <iframe
+          src="https://economicsobservatory.github.io/ECOvisualisations/articles/scottish-independence-what-are-the-big-economic-questions/visualisation/fig1/"></iframe>
       </div>
     </div>
   </div>
 
   <div class="carousel carousel-nav"
     data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": false }'>
-    <div class="carousel-cell"></div>
-    <div class="carousel-cell"></div>
-    <div class="carousel-cell"></div>
-    <div class="carousel-cell"></div>
-    <div class="carousel-cell"></div>
     <div class="carousel-cell"></div>
     <div class="carousel-cell"></div>
     <div class="carousel-cell"></div>
@@ -205,7 +148,7 @@
     var flkty = new Flickity('.carousel-main', {
       pageDots: false,
       wrapAround: true,
-      autoPlay: 10000,
+      // autoPlay: 2000,
       lazyLoad: 2
     });
   </script>

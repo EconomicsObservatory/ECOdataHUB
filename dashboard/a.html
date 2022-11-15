@@ -1,17 +1,13 @@
-<!-- <rssapp-wall id="5SGEq9QjhvMpbvdT"></rssapp-wall><script src="https://widget.rss.app/v1/wall.js" type="text/javascript" async></script> -->
-
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width">
-
-  <link rel='stylesheet' href='https://npmcdn.com/flickity@2/dist/flickity.css'>
-
+  <link rel="stylesheet" href="flickity.css" media="screen">
+  <link rel="stylesheet" href="fullscreen.css">
+  <script src="flickity.pkgd.js"></script>
+  <script src="fullscreen.js"></script>
   <style>
     * {
       box-sizing: border-box;
@@ -110,10 +106,10 @@
       display: none;
     }
 
-    iframe{
-      width:90%;
-      height:90%;
-      border:none;
+    iframe {
+      width: 90%;
+      height: 90%;
+      border: none;
       overflow: hidden;
     }
   </style>
@@ -122,11 +118,7 @@
 
 <body>
 
-  <div id="fb-root"></div>
-  <script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"></script>
-
-  <!-- Flickity HTML init -->
-  <div class="carousel js-flickity">
+  <div id="main-carousel">
     <div class="carousel-cell">
       <iframe
         src="https://economicsobservatory.github.io/ECOvisualisations/articles/levelling-up-what-might-it-mean-for-scotland/visualisation/fig2/"></iframe>
@@ -140,12 +132,19 @@
         src="https://economicsobservatory.github.io/ECOvisualisations/articles/scottish-independence-what-are-the-big-economic-questions/visualisation/fig1/"></iframe>
     </div>
     <div class="carousel-cell">
-      <iframe src="https://economicsobservatory.github.io/ECOvisualisations/articles/how-can-education-and-skills-contribute-to-levelling-up/visualisation/fig2/"></iframe>
+      <iframe
+        src="https://economicsobservatory.github.io/ECOvisualisations/articles/how-can-education-and-skills-contribute-to-levelling-up/visualisation/fig2/"></iframe>
     </div>
   </div>
 
-  <script src='https://npmcdn.com/flickity@2/dist/flickity.pkgd.js'></script>
-
+  <script>
+    var flkty = new Flickity('#main-carousel', {
+      // pageDots: false
+      // wrapAround: true,
+      // autoPlay: 1500,
+      // fullscreen: true
+    });
+  </script>
 </body>
 
 </html>
