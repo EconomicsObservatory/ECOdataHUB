@@ -1,0 +1,95 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="flickity.css" media="screen">
+  <script src="flickity.pkgd.js"></script>
+  <!-- <link rel="stylesheet" href="fullscreen.css"> -->
+  <!-- <script src="fullscreen.js"></script> -->
+  <style>
+    .carousel-cell {
+      width: 70%;
+      height: 95vh;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+
+    .carousel-cell div {
+      width: 90%;
+      height: 95%;
+      border: none;
+      overflow: hidden;
+      display: block;
+      max-width: 100%;
+      max-height: 100%;
+      padding-bottom: 100px;
+      padding-top: 50px;
+      /* dim unselected */
+      opacity: 0.7;
+      -webkit-transform: scale(0.85);
+      transform: scale(0.85);
+      -webkit-filter: blur(5px);
+      filter: blur(5px);
+      -webkit-transition: opacity 0.3s, -webkit-transform 0.3s, transform 0.3s, -webkit-filter 0.3s, filter 0.3s;
+      transition: opacity 0.3s, transform 0.3s, filter 0.3s;
+    }
+
+    .carousel-cell.is-selected div {
+      opacity: 1;
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      -webkit-filter: none;
+      filter: none;
+    }
+
+    iframe {
+      height: 100%;
+      width: 100%;
+      border: none;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main-carousel">
+    <div class="carousel-cell">
+      <div>
+        <h1>Hello bello2</h1>
+        <iframe
+          src="https://economicsobservatory.github.io/ECOvisualisations/articles/levelling-up-what-might-it-mean-for-scotland/visualisation/fig3/a.html"></iframe>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div>
+        <h1>Hello bello</h1>
+        <iframe
+          src="https://economicsobservatory.github.io/ECOvisualisations/articles/levelling-up-what-might-it-mean-for-scotland/visualisation/fig2/"></iframe>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div>
+        <h1>Hello bello5</h1>
+        <iframe
+          src="https://economicsobservatory.github.io/ECOvisualisations/articles/scottish-independence-what-are-the-big-economic-questions/visualisation/fig1/"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var flkty = new Flickity('.main-carousel', {
+      // pageDots: false
+      wrapAround: true,
+      // autoPlay: 1500,
+      // fullscreen: true
+      lazyLoad: 1
+    });
+  </script>
+</body>
+
+</html>
