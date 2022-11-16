@@ -1,0 +1,96 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 400,
+  "height": 250,
+  "config": {
+    "background": "white",
+    "view": {
+      "stroke": "transparent"
+    }
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/RDeconomist/RDeconomist.github.io/main/data/BoE_USD_GBP.json",
+    "format": {
+      "type": "json"
+    }
+  },
+  "transform": [
+    {
+      "calculate": "year(datum.Date)",
+      "as": "year"
+    },
+    {
+      "filter": "datum.year>=minYear"
+    },
+    {
+      "filter": "datum.year<=maxYear"
+    }
+  ],
+  "params": [
+    {
+      "name": "minYear",
+      "value": 1975,
+      "bind": {
+        "input": "range",
+        "min": 1975,
+        "max": 2023,
+        "step": 1,
+        "name": "Start year:"
+      }
+    },
+    {
+      "name": "maxYear",
+      "value": 2022,
+      "bind": {
+        "input": "range",
+        "min": 1975,
+        "max": 2023,
+        "step": 1,
+        "name": "End year:"
+      }
+    }
+  ],
+  "mark": {
+    "type": "line",
+    "color": "#e6224b ",
+    "strokeWidth": 2,
+    "opacity": 1
+  },
+  "encoding": {
+    "x": {
+      "field": "Date",
+      "type": "temporal",
+      "title": null,
+      "axis": {
+        "grid": false,
+        "labelColor": "black"
+      }
+    },
+    "y": {
+      "field": "Value",
+      "type": "quantitative",
+      "title": "$USD for 1 £GBP",
+      "scale": {
+        "domain": [
+          0.5,
+          2.6
+        ]
+      },
+      "axis": {
+        "domainColor": "#676A86",
+        "format": "s",
+        "gridColor": "#676A86",
+        "gridOpacity": 0.2,
+        "labelColor": "#676A86",
+        "tickColor": "#676A86",
+        "title": "$USD for 1 £GBP",
+        "titleAlign": "left",
+        "titleAngle": 0,
+        "titleBaseline": "bottom",
+        "titleColor": "#676A86",
+        "titleX": -5,
+        "titleY": -5
+      }
+    }
+  }
+}

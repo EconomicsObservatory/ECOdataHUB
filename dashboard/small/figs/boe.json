@@ -1,0 +1,92 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 400,
+  "height": 270,
+  "config": {
+    "view": {
+      "stroke": "transparent"
+    }
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/RDeconomist/RDeconomist.github.io/main/data/BankRate.csv"
+  },
+  "transform": [
+    {
+      "calculate": "year(datum.date)",
+      "as": "year"
+    },
+    {
+      "filter": "datum.year>=minYear"
+    },
+    {
+      "filter": "datum.year<=maxYear"
+    },
+    {
+      "calculate": "datum.BankRate/100",
+      "as":"y"
+    }
+  ],
+  "params": [
+    {
+      "name": "minYear",
+      "value": 2005,
+      "bind": {
+        "input": "range",
+        "min": 1975,
+        "max": 2022,
+        "step": 1,
+        "name": "Start year:"
+      }
+    },
+    {
+      "name": "maxYear",
+      "value": 2022,
+      "bind": {
+        "input": "range",
+        "min": 1975,
+        "max": 2022,
+        "step": 1,
+        "name": "End year:"
+      }
+    }
+  ],
+  "mark": {
+    "type": "line",
+    "color": "#e6224b",
+    "interpolate": "step",
+    "width": 10,
+    "strokeWidth": 2,
+    "opacity": 1
+  },
+  "encoding": {
+    "x": {
+      "field": "date",
+      "type": "temporal",
+      "title": null,
+      "axis": {
+        "grid": false,
+        "labelColor": "black"
+      }
+    },
+    "y": {
+      "field": "y",
+      "type": "quantitative",
+      "title": "%",
+      "axis": {
+        "format": "%",
+        "domainColor": "#676A86",
+        "gridColor": "#676A86",
+        "gridOpacity": 0.2,
+        "labelColor": "#676A86",
+        "tickColor": "#676A86",
+        "title": "",
+        "titleAlign": "left",
+        "titleAngle": 0,
+        "titleBaseline": "bottom",
+        "titleColor": "#676A86",
+        "titleX": -5,
+        "titleY": -5
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Tourism figure 2",
+  "data": {
+    "url": "https://raw.githubusercontent.com/RDeconomist/observatory/main/S14_C2.csv"
+  },
+  "config": {
+    "view": {
+      "continuousWidth": 400,
+      "continuousHeight": 300,
+      "stroke": null
+    }
+  },
+  "height": 320,
+  "width": 390,
+  "mark": "line",
+  "encoding": {
+    "x": {
+      "field": "date",
+      "type": "temporal",
+      "title": null,
+      "axis": {
+        "labelAlign": "left",
+        "grid": false,
+        "labelOffset": 10,
+        "labelExpr": "timeFormat(datum.value, '%b')"
+      }
+    },
+    "y": {
+      "field": "value",
+      "type": "quantitative",
+      "title": null
+    },
+    "color": {
+      "field": "series",
+      "type": "nominal",
+      "scale": {
+        "range": [
+          "#5c267b",
+          "#e6224b",
+          "#36b7b4",
+          "#f4c245"
+        ]
+      },
+      "title": null
+    },
+    "tooltip": [
+      {
+        "field": "date",
+        "type": "temporal",
+        "timeUnit": "month",
+        "title": "Month"
+      },
+      {
+        "field": "series",
+        "type": "nominal",
+        "title": "Year"
+      },
+      {
+        "field": "value",
+        "type": "quantitative",
+        "title": "Number of flights (7-day average)"
+      }
+    ]
+  },
+  "transform": [
+    {
+      "calculate": "toDate('2000-'+datum.Date)",
+      "as": "Date"
+    }
+  ]
+}

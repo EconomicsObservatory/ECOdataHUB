@@ -1,0 +1,112 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Various US measures state by state",
+  "title": {
+    "text": "",
+    "subtitle": [
+      ""
+    ],
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/jhellingsdata/jhellingsdata.github.io/main/Data/USA_databank_combined.csv",
+    "format": {
+      "type": "csv",
+      "delimiter": ","
+    }
+  },
+  "mark": {
+    "type": "circle",
+    "size": 150,
+    "color": "rgb(0,67,167)",
+    "opacity": 0.6
+  },
+  "height": 290,
+  "width": 500,
+  "params": [
+    {
+      "name": "Select",
+      "value": "Violent Crime",
+      "bind": {
+        "input": "select",
+        "options": [
+          "Violent Crime",
+          "Homocide",
+          "Rape",
+          "Robbery",
+          "Aggravated Assault",
+          "Property Crime",
+          "Burglary",
+          "Larceny",
+          "Motor Vehicle Theft",
+          "Arson"
+        ]
+      }
+    }
+  ],
+  "transform": [
+    {
+      "calculate": "datum[Select]",
+      "as": "varSelected"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "Median Household Income ($)",
+      "type": "quantitative",
+      "title": null,
+      "scale": {
+        "domain": [
+          40000,
+          100000
+        ]
+      }
+    },
+    "y": {
+      "field": "varSelected",
+      "type": "quantitative",
+      "title": null
+    },
+    "color": {
+      "field": "State",
+      "type": "nominal",
+      "scale": {
+        "scheme": "set1"
+      },
+      "legend": null,
+      "title": null
+    },
+    "size": {
+      "field": "Population",
+      "type": "quantitative",
+      "title": "Population",
+      "scale": {
+        "range": [
+          10,
+          500
+        ]
+      }
+    },
+    "tooltip": [
+      {
+        "field": "State"
+      },
+      {
+        "field": "Population",
+        "format": ",d"
+      },
+      {
+        "field": "Personal Income per capita ($)",
+        "format": ",d"
+      },
+      {
+        "field": "varSelected",
+        "title": "Value",
+        "format": ",d"
+      }
+    ]
+  }
+}

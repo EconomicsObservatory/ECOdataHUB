@@ -1,0 +1,410 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="flickity.css" media="screen">
+  <script src="flickity.pkgd.js"></script>
+  <!-- <link rel="stylesheet" href="fullscreen.css"> -->
+  <!-- <script src="fullscreen.js"></script> -->
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Nunito", sans-serif;
+      overflow: hidden;
+    }
+
+    .carousel {
+      /* background: #FAFAFA; */
+      margin-bottom: 40px;
+    }
+
+    .carousel-cell {
+      /* width: 100%; */
+      /* height: 200px; */
+      margin-right: 10px;
+      /* background: #8C8; */
+      border-radius: 5px;
+      counter-increment: carousel-cell;
+      width: 70%;
+      height: 93vh;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+
+    .carousel-nav {
+      bottom: 50px;
+      left: 20px;
+    }
+
+    /* cell number */
+    .carousel-nav .carousel-cell:before {
+      display: block;
+      text-align: center;
+      content: counter(carousel-cell);
+      line-height: 200px;
+      font-size: 16px;
+      color: white;
+    }
+
+    .carousel-nav .carousel-cell {
+      height: 30px;
+      width: 30px;
+      background: #122B39;
+    }
+
+    .carousel-nav .carousel-cell.is-nav-selected {
+      background: #F4134D;
+    }
+
+    .carousel-cell div {
+      width: 90%;
+      height: 95%;
+      border: none;
+      overflow: hidden;
+      display: block;
+      max-width: 100%;
+      max-height: 100%;
+      padding-bottom: 100px;
+      /* padding-top: 50px; */
+      /* dim unselected */
+      opacity: 0.7;
+      -webkit-transform: scale(0.85);
+      transform: scale(0.85);
+      -webkit-filter: blur(5px);
+      filter: blur(5px);
+      -webkit-transition: opacity 0.3s, -webkit-transform 0.3s, transform 0.3s, -webkit-filter 0.3s, filter 0.3s;
+      transition: opacity 0.3s, transform 0.3s, filter 0.3s;
+    }
+
+    .carousel-cell.is-selected div {
+      opacity: 1;
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      -webkit-filter: none;
+      filter: none;
+    }
+
+    .carousel-cell iframe {
+      height: 100%;
+      width: 100%;
+      border: none;
+      overflow: hidden;
+    }
+
+    .carousel-cell h1 {
+      font-size: 27px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    iframe.vega400px {
+      /* background-color: #F4134D; */
+      height: 400px;
+      width: 510px;
+      transform: scale(1.4) translate(25%, 15%);
+    }
+
+    iframe.map800px {
+      /* background-color: #F4134D; */
+      height: 780px;
+      width: 900px;
+      transform: scale(0.65) translate(-10%, -25%);
+    }
+
+    .blink {
+      animation: blinker 1s infinite;
+      position: fixed;
+      top: 150px;
+      left: 47%;
+      font-size: 14px;
+      z-index: 999;
+    }
+
+    @keyframes blinker {
+      from {
+        opacity: 1.0;
+      }
+
+      50% {
+        opacity: 0.5;
+      }
+
+      to {
+        opacity: 1.0;
+      }
+    }
+
+    .button {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      border: 0;
+      background: transparent;
+      box-sizing: border-box;
+      width: 0;
+      height: 12px;
+      border-color: transparent transparent transparent #F4134D;
+      transition: 100ms all ease;
+      cursor: pointer;
+      border-style: solid;
+      border-width: 14px 0 14px 24px;
+    }
+
+    .button.paused {
+      border-style: double;
+      border-width: 0px 0 0px 24px;
+      bottom: 22px;
+      height: 27px;
+    }
+
+    .button:hover {
+      border-color: transparent transparent transparent #122B39;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Flickity HTML init -->
+  <div class="carousel carousel-main">
+    <div class="carousel-cell">
+      <div>
+        <h1>UK consumer price inflation (as measured by the CPI)</h1>
+        <iframe class="vega400px" src="figs/vega-embed.html#fig1_cpi_local"></iframe>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div>
+        <h1>The UK's consumer price index, 1988-2022</h1>
+        <div class="blink" style="left:70%;top:19%">live data from ONS 🔴</div>
+        <iframe class="vega400px" src="figs/vega-embed.html#cpi"></iframe>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div>
+        <h1>Global greenhouse gas emissions and warming projections</h1>
+        <iframe class="vega400px" src="figs/vega-embed.html#cc"></iframe>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div>
+        <h1>Global energy supply investment by sector</h1>
+        <iframe class="vega400px" src="figs/vega-embed.html#energy" style="margin-left:-50px"></iframe>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div>
+        <h1>Emissions intensity of GDP</h1>
+        <iframe class="vega400px" src="figs/vega-embed.html#ei"></iframe>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div>
+        <h1>Primary energy consumption by fuel</h1>
+        <iframe class="vega400px" src="figs/vega-embed.html#fig2_energy_by_source"></iframe>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div>
+        <h1>Global energy mix by fuel, 2021 onwards</h1>
+        <iframe class="vega400px" src="figs/vega-embed.html#fig4_energy_shares"></iframe>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div>
+        <h1>Expenditure on TV adverts in 2015, by food category</h1>
+        <iframe class="vega400px" src="figs/fig1_food groups.html" style="height:370px"></iframe>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div>
+        <h1>Number of commercial flights (seven-day moving average)</h1>
+        <iframe class="vega400px" src="figs/vega-embed.html#flights" style="margin-left:-50px"></iframe>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div>
+        <h1>Proportion of US and UK adults with degrees over time</h1>
+        <iframe class="vega400px" src="figs/vega-embed.html#degrees"></iframe>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div>
+        <h1>Bank of England interest rates</h1>
+        <iframe class="vega400px" src="figs/vega-embed.html#boe"></iframe>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div>
+        <h1>GDP growth rate (quarterly, chained volume measure)</h1>
+        <div class="blink" style="left:70%;top:15%">live data from ONS 🔴</div>
+        <iframe class="vega400px" src="figs/vega-embed.html#gdp"></iframe>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div>
+        <h1>Sterling-dollar exchange rate</h1>
+        <iframe class="vega400px" src="figs/vega-embed.html#dollar"></iframe>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div>
+        <h1>Public sector net debt (% GDP)</h1>
+        <div class="blink" style="left:71.5%;top:13%">live data from ONS 🔴</div>
+        <iframe class="vega400px" src="figs/vega-embed.html#debt"></iframe>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div>
+        <h1>Ten year bonds yield</h1>
+        <iframe class="vega400px" src="figs/vega-embed.html#bonds"></iframe>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div>
+        <h1>G7 government debt (% of GDP)</h1>
+        <iframe class="vega400px" src="figs/vega-embed.html#debt2"></iframe>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div>
+        <h1>Materials critical for transition to a low-carbon economy</h1>
+        <iframe class="vega400px" src="figs/vega-embed.html#fig1_minerals"
+          style="margin-left:-50px; margin-top: -17px;"></iframe>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div>
+        <h1>Material intensity of energy and transport technologies</h1>
+        <iframe class="vega400px" src="figs/vega-embed.html#fig2_technologies" style="margin-left:-50px"></iframe>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div>
+        <h1>Annual growth in rental prices in the UK</h1>
+        <iframe class="vega400px" src="figs/vega-embed.html#rent"></iframe>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div>
+        <h1>Remote working before and after the pandemic by occupation</h1>
+        <iframe class="vega400px" src="figs/vega-embed.html#rw"></iframe>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div>
+        <h1>Employer-planned remote work (%) for England and Wales</h1>
+        <iframe class="map800px" src="figs/fig4"></iframe>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div>
+        <h1>Total global investment activity in fintech</h1>
+        <iframe class="vega400px" src="figs/vega-embed.html#fig1_deals"></iframe>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div>
+        <h1>Economic metrics, by US state</h1>
+        <iframe class="vega400px" src="figs/vega-embed.html#us1"></iframe>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div>
+        <h1>The Great Gatsby curve</h1>
+        <iframe class="vega400px" src="figs/vega-embed.html#fig1_inequality"></iframe>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div>
+        <h1>Crime statistics, by US state</h1>
+        <iframe class="vega400px" src="figs/vega-embed.html#us2"></iframe>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div>
+        <h1>Crime rates vs income, by US state</h1>
+        <iframe class="vega400px" src="figs/vega-embed.html#us3"></iframe>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div>
+        <h1>Map of England by key stage 2 attainment</h1>
+        <iframe class="map800px" src="figs/fig2"></iframe>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div>
+        <h1>State school spending per pupil vs private school fees</h1>
+        <iframe class="vega400px" src="figs/vega-embed.html#fig3_private_schools"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="carousel carousel-nav"
+    data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": false, "prevNextButtons": false }'>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+  </div>
+
+  <button class='button'></button>
+
+  <script>
+    var flkty = new Flickity('.carousel-main', {
+      pageDots: false,
+      wrapAround: true,
+      autoPlay: 2000,
+      lazyLoad: 2
+    });
+
+    var playing = true;
+
+    function classToggle() {
+      this.classList.toggle('paused');
+      if (playing) { flkty.pausePlayer() } else { flkty.unpausePlayer() }
+      playing = !playing;
+    }
+    document.querySelector('.button').addEventListener('click', classToggle);
+
+  </script>
+</body>
+
+</html>
