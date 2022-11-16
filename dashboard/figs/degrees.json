@@ -1,0 +1,88 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/RDeconomist/observatory/main/J43_C1.csv"
+  },
+  "height": 300,
+  "width": 400,
+  "mark": {
+    "type": "line"
+  },
+  "encoding": {
+    "x": {
+      "field": "date",
+      "type": "temporal",
+      "sort": [],
+      "title": null,
+      "axis": {
+        "grid": false,
+        "labelAngle": 0
+      }
+    },
+    "y": {
+      "field": "value",
+      "type": "quantitative",
+      "scale": {
+        "domain": [
+          0,
+          0.55
+        ]
+      },
+      "axis": {
+        "grid": true,
+        "labelFontSize": 12,
+        "title": "Share of graduates",
+        "titleAlign": "left",
+        "titleAngle": 0,
+        "titleBaseline": "bottom",
+        "titleColor": "#676A86",
+        "titleFontSize": 12,
+        "titleX": 5,
+        "titleY": 15,
+        "format": "%"
+      }
+    },
+    "color": {
+      "field": "series",
+      "type": "nominal",
+      "sort": [],
+      "legend": {
+        "labelFontSize": 12,
+        "orient": "top-right"
+      },
+      "title": null,
+      "scale": {
+        "range": [
+          "#e6224b",
+          "#36b7b4"
+        ]
+      }
+    },
+    "tooltip": [
+      {
+        "field": "date",
+        "type": "temporal",
+        "title": "Year",
+        "timeUnit": "year"
+      },
+      {
+        "field": "series",
+        "type": "nominal",
+        "title": "Nation"
+      },
+      {
+        "field": "value",
+        "type": "quantitative",
+        "title": "Share of graduates",
+        "format": "%"
+      }
+    ]
+  },
+  "config": {
+    "view": {
+      "continuousWidth": 400,
+      "continuousHeight": 300,
+      "stroke": null
+    }
+  }
+}

@@ -1,32 +1,14 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {
-    "text": "Consumer Price Inflation",
-    "subtitle": "CPI, % change over 12 months ",
-    "subtitleFontStyle": "italic",
-    "subtitleFontSize": 10,
-    "anchor": "start",
-    "color": "black"
-  },
+  "width": 400,
+  "height": 270,
   "config": {
     "view": {
-      "continuousWidth": 400,
-      "continuousHeight": 300,
-      "stroke": null
+      "stroke": "transparent"
     }
   },
-  "width": 400,
-  "height": 240,
   "data": {
-    "url": "https://api.allorigins.win/raw?url=https://api.ons.gov.uk/timeseries/d7g7/dataset/mm23/data",
-    "format": {
-      "type": "json",
-      "property": "months"
-    }
-  },
-  "xxSTATICdata": {
-    "name": "myData",
-    "url": "https://raw.githubusercontent.com/RDeconomist/RDeconomist.github.io/main/charts/ONSinflation/data_MM23-D7G7.json",
+    "url": "https://api.allorigins.win/raw?url=https://api.ons.gov.uk/timeseries/hf6x/dataset/pusf/data",
     "format": {
       "type": "json",
       "property": "months"
@@ -82,6 +64,10 @@
       "as": "date12"
     },
     {
+      "calculate": "datum.value/100",
+      "as": "y"
+    },
+    {
       "calculate": "timeParse(datum.date12, '%Y-%m')",
       "as": "dateClean"
     },
@@ -95,22 +81,22 @@
   "params": [
     {
       "name": "minYear",
-      "value": 2015,
+      "value": 1993,
       "bind": {
         "input": "range",
-        "min": 1988,
-        "max": 2023,
+        "min": 1993,
+        "max": 2022,
         "step": 1,
         "name": "Start year:"
       }
     },
     {
       "name": "maxYear",
-      "value": 2023,
+      "value": 2022,
       "bind": {
         "input": "range",
         "min": 1988,
-        "max": 2023,
+        "max": 2022,
         "step": 1,
         "name": "End year:"
       }
@@ -120,7 +106,7 @@
     {
       "mark": {
         "type": "line",
-        "color": "#00BFFF",
+        "color": "#122b39",
         "width": 10,
         "strokeWidth": 2,
         "opacity": 1
@@ -131,13 +117,19 @@
           "type": "temporal",
           "title": null,
           "axis": {
-            "grid": false
+            "grid": false,
+            "labelColor": "black"
           }
         },
         "y": {
-          "field": "value",
+          "field": "y",
           "type": "quantitative",
-          "title": null
+          "title": null,
+          "axis": {
+            "grid": true,
+            "labelColor": "black",
+            "format": "%"
+          }
         }
       }
     },
@@ -152,7 +144,7 @@
           "aggregate": {
             "argmax": "dateClean"
           },
-          "field": "value",
+          "field": "y",
           "type": "quantitative"
         },
         "text": {
@@ -167,7 +159,7 @@
         {
           "mark": {
             "type": "circle",
-            "color": "#00BFFF",
+            "color": "#e6224b",
             "size": 100
           }
         },
@@ -176,7 +168,7 @@
             "type": "text",
             "align": "left",
             "dx": 8,
-            "color": "#00BFFF"
+            "color": "#e6224b"
           }
         }
       ]

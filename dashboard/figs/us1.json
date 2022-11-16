@@ -1,0 +1,109 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 500,
+  "height": 300,
+  "data": {
+    "url": "https://raw.githubusercontent.com/jhellingsdata/jhellingsdata.github.io/main/Data/US_States_5m.json",
+    "format": {
+      "property": "features"
+    }
+  },
+  "title": {
+    "text": "",
+    "fontSize": 12,
+    "subtitle": [],
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "middle",
+    "color": "black"
+  },
+  "projection": {
+    "type": "albersUsa"
+  },
+  "mark": "geoshape",
+  "params": [
+    {
+      "name": "Select",
+      "value": "Nominal GDP ($mn)",
+      "bind": {
+        "input": "select",
+        "options": [
+          "Nominal GDP ($mn)",
+          "Real GDP ($mn)",
+          "Personal Income per capita ($)",
+          "Population (k)",
+          "Unemployment (%)",
+          "Median Household Income ($)",
+          "High School Graduate (%)",
+          "Bachelor Degree (%)",
+          "Homeownership (%)",
+          "Housing Inventory (days on market)",
+          "Price Parities Index",
+          "Nominal GDP per capita ($)",
+          "Real GDP per capita ($)",
+          "Labour Participation (%)",
+          "Average Hourly Earnings ($)"
+        ]
+      }
+    }
+  ],
+  "transform": [
+    {
+      "lookup": "properties.NAME",
+      "from": {
+        "key": "State",
+        "fields": [
+          "Nominal GDP ($mn)",
+          "Real GDP ($mn)",
+          "Personal Income per capita ($)",
+          "Population (k)",
+          "Unemployment (%)",
+          "Median Household Income ($)",
+          "High School Graduate (%)",
+          "Bachelor Degree (%)",
+          "Homeownership (%)",
+          "Housing Inventory (days on market)",
+          "Price Parities Index",
+          "Nominal GDP per capita ($)",
+          "Real GDP per capita ($)",
+          "Labour Participation (%)",
+          "Average Hourly Earnings ($)"
+        ],
+        "data": {
+          "url": "https://raw.githubusercontent.com/jhellingsdata/jhellingsdata.github.io/main/Data/USA_databank_wide.csv"
+        }
+      }
+    },
+    {
+      "calculate": "datum[Select]",
+      "as": "varSelected"
+    }
+  ],
+  "encoding": {
+    "color": {
+      "field": "varSelected",
+      "legend": {
+        "title": "",
+        "legendX": 0,
+        "legendY": 0,
+        "direction": "vertical"
+      },
+      "type": "quantitative",
+      "scale": {
+        "scheme": "goldorange",
+        "reverse": false
+      }
+    },
+    "tooltip": [
+      {
+        "field": "properties.NAME",
+        "title": "State"
+      },
+      {
+        "field": "varSelected",
+        "title": "Value",
+        "format": ",d"
+      }
+    ]
+  }
+}

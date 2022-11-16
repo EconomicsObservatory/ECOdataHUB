@@ -114,6 +114,13 @@
       transform: scale(4.3) translate(48%, 38%);
     }
 
+    iframe.map800px {
+      /* background-color: #F4134D; */
+      height: 780px;
+      width: 1020px;
+      transform: scale(2.1) translate(32%, 23%);
+    }
+
     .blink {
       animation: blinker 1s infinite;
       position: fixed;
@@ -192,10 +199,155 @@
         <iframe class="vega400px" src="figs/fig1_food groups.html" style="height:370px"></iframe>
       </div>
     </div>
+    <div class="carousel-cell">
+      <div>
+        <h1>Number of commercial flights (seven-day moving average)</h1>
+        <iframe class="vega400px" src="figs/vega-embed.html#flights" style="margin-left:-150px"></iframe>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div>
+        <h1>Proportion of US and UK adults with degrees over time</h1>
+        <iframe class="vega400px" src="figs/vega-embed.html#degrees"></iframe>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div>
+        <h1>Bank of England interest rates</h1>
+        <iframe class="vega400px" src="figs/vega-embed.html#boe"></iframe>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div>
+        <h1>GDP growth rate (quarterly, chained volume measure)</h1>
+        <div class="blink" style="left:70%;top:17%">live data from ONS 🔴</div>
+        <iframe class="vega400px" src="figs/vega-embed.html#gdp"></iframe>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div>
+        <h1>Sterling-dollar exchange rate</h1>
+        <iframe class="vega400px" src="figs/vega-embed.html#dollar"></iframe>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div>
+        <h1>Public sector net debt (% GDP)</h1>
+        <div class="blink" style="left:73.5%;top:15%">live data from ONS 🔴</div>
+        <iframe class="vega400px" src="figs/vega-embed.html#debt"></iframe>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div>
+        <h1>Ten year bonds yield</h1>
+        <iframe class="vega400px" src="figs/vega-embed.html#bonds"></iframe>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div>
+        <h1>G7 government debt (% of GDP)</h1>
+        <iframe class="vega400px" src="figs/vega-embed.html#debt2"></iframe>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div>
+        <h1>Materials critical for transition to a low-carbon economy</h1>
+        <iframe class="vega400px" src="figs/vega-embed.html#fig1_minerals"
+          style="margin-left:-150px; margin-top: -50px;"></iframe>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div>
+        <h1>Material intensity of energy and transport technologies</h1>
+        <iframe class="vega400px" src="figs/vega-embed.html#fig2_technologies" style="margin-left:-150px"></iframe>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div>
+        <h1>Annual growth in rental prices in the UK</h1>
+        <iframe class="vega400px" src="figs/vega-embed.html#rent"></iframe>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div>
+        <h1>Remote working before and after the pandemic by occupation</h1>
+        <iframe class="vega400px" src="figs/vega-embed.html#rw"></iframe>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div>
+        <h1>Employer-planned remote work (%) for England and Wales</h1>
+        <iframe class="map800px" src="figs/fig4"></iframe>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div>
+        <h1>Total global investment activity in fintech</h1>
+        <iframe class="vega400px" src="figs/vega-embed.html#fig1_deals"></iframe>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div>
+        <h1>Economic metrics, by US state</h1>
+        <iframe class="vega400px" src="figs/vega-embed.html#us1"></iframe>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div>
+        <h1>The Great Gatsby curve</h1>
+        <iframe class="vega400px" src="figs/vega-embed.html#fig1_inequality"></iframe>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div>
+        <h1>Crime statistics, by US state</h1>
+        <iframe class="vega400px" src="figs/vega-embed.html#us2"></iframe>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div>
+        <h1>Crime rates vs income, by US state</h1>
+        <iframe class="vega400px" src="figs/vega-embed.html#us3"></iframe>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div>
+        <h1>Map of England by key stage 2 attainment</h1>
+        <iframe class="map800px" src="figs/fig2"></iframe>
+      </div>
+    </div>
+    <div class="carousel-cell">
+      <div>
+        <h1>State school spending per pupil vs private school fees</h1>
+        <iframe class="vega400px" src="figs/vega-embed.html#fig3_private_schools"></iframe>
+      </div>
+    </div>
   </div>
 
   <div class="carousel carousel-nav"
     data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": false }'>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>
     <div class="carousel-cell"></div>
     <div class="carousel-cell"></div>
     <div class="carousel-cell"></div>

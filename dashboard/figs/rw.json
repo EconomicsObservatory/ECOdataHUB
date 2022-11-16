@@ -1,0 +1,64 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "height": 300,
+  "width": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/RDeconomist/observatory/main/F45_C1b.csv"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "point",
+        "size": 60,
+        "color": "#e6224b",
+        "filled": true
+      },
+      "encoding": {
+        "x": {
+          "field": "value2",
+          "type": "quantitative",
+          "title": "Remote working, actual 2019 (%)"
+        },
+        "y": {
+          "field": "value1",
+          "type": "quantitative",
+          "title": "Remote working, employer expected 2022 (%)"
+        },
+        "tooltip": [
+          {
+            "field": "job",
+            "type": "nominal",
+            "title": "Occupation"
+          },
+          {
+            "field": "value2",
+            "type": "quantitative",
+            "title": "Remote working, actual 2019 (%)"
+          },
+          {
+            "field": "value1",
+            "type": "quantitative",
+            "title": "Remote working, employer expected 2022 (%)"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "line",
+        "color": "#122b39",
+        "opacity": 0.6
+      },
+      "encoding": {
+        "x": {
+          "field": "value3",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "value4",
+          "type": "quantitative"
+        }
+      }
+    }
+  ]
+}

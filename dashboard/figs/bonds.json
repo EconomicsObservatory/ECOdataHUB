@@ -1,0 +1,119 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "config": {
+    "view": {
+      "stroke": "transparent"
+    }
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/RDeconomist/RDeconomist.github.io/main/data/ukYieldCurve.csv"
+  },
+  "transform": [
+    {
+      "calculate": "year(datum.Date)",
+      "as": "year"
+    },
+    {
+      "filter": "datum.year>=minYear"
+    },
+    {
+      "filter": "datum.year<=maxYear"
+    },
+    {
+      "filter": "datum.y1!=0"
+    },
+    {
+      "calculate": "datum.us10y/100",
+      "as": "us"
+    },
+    {
+      "calculate": "datum.y10/100",
+      "as": "uk"
+    },
+    {
+      "calculate": "datum.german10y/100",
+      "as": "de"
+    }
+  ],
+  "params": [
+    {
+      "name": "minYear",
+      "value": 2005,
+      "bind": {
+        "input": "range",
+        "min": 1979,
+        "max": 2022,
+        "step": 1,
+        "name": "Start year:"
+      }
+    },
+    {
+      "name": "maxYear",
+      "value": 2022,
+      "bind": {
+        "input": "range",
+        "min": 1979,
+        "max": 2022,
+        "step": 1,
+        "name": "End year:"
+      }
+    }
+  ],
+  "repeat": {
+    "layer": [
+      "us",
+      "uk",
+      "de"
+    ]
+  },
+  "spec": {
+    "height": 270,
+    "width": 400,
+    "mark": {
+      "type": "line",
+      "strokeWidth": 2
+    },
+    "encoding": {
+      "x": {
+        "field": "Date",
+        "type": "temporal",
+        "title": null,
+        "axis": {
+          "grid": false,
+          "labelColor": "black"
+        }
+      },
+      "y": {
+        "field": {
+          "repeat": "layer"
+        },
+        "type": "quantitative",
+        "title": null,
+        "axis": {
+          "grid": true,
+          "labelColor": "black",
+          "format": "%"
+        }
+      },
+      "color": {
+        "datum": {
+          "repeat": "layer"
+        },
+        "scale": {
+          "range": [
+            "#122b39 ",
+            "#e6224b ",
+            "#36b7b4"
+          ]
+        },
+        "legend": {
+          "labelExpr": "{'us': 'US', 'uk': 'UK', 'de':'Germany'}[datum.label]",
+          "orient": "top-right",
+          "labelColor": "black",
+          "title": "",
+          "titleColor": "black"
+        }
+      }
+    }
+  }
+}
