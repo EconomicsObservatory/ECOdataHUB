@@ -3600,8 +3600,10 @@ proto._createPlayer = function() {
   this.player = new Player( this );
 
   this.on( 'activate', this.activatePlayer );
-  this.on( 'uiChange', this.stopPlayer );
-  this.on( 'pointerDown', this.stopPlayer );
+  // this.on( 'uiChange', this.stopPlayer );
+  // this.on( 'pointerDown', this.stopPlayer );
+  this.on('uiChange', this.pausePlayer);
+  this.on('pointerDown', this.pausePlayer);
   this.on( 'deactivate', this.deactivatePlayer );
 };
 
@@ -3625,10 +3627,12 @@ proto.stopPlayer = function() {
 
 proto.pausePlayer = function() {
   this.player.pause();
+  // classToggle()
 };
 
 proto.unpausePlayer = function() {
   this.player.unpause();
+  // classToggle()
 };
 
 proto.deactivatePlayer = function() {
